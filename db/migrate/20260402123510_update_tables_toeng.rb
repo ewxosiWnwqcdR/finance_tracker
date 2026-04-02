@@ -1,4 +1,4 @@
-class UpdateTablesToEng < ActiveRecord::Migration[8.1]
+class UpdateTablesToeng < ActiveRecord::Migration[8.1]
   def change
     rename_column :buchungen, :benutzer_id, :user_id
     rename_column :buchungen, :konto_id, :account_id
