@@ -1,3 +1,11 @@
 <section>
-
+    <%= form_with model: @transaction do |form| %>
+        <%= form.label :payment_reference %><%= form.text_field :payment_reference %>
+        <%= form.label :amount %><%= form.text_field :amount %>
+        <%= form.label :currency %><%= form.select :currency, [["€", "€"], ["$", "$"]] %>
+        <%= form.label :counterparty %><%= form.text_field :counterparty %>        
+        <%= form.label :posting_date %><%= form.date_field :posting_date, value: (form.object.posting_date || Date.current) %>
+         
+        <%= form.submit %>
+    <% end %>
 </section>
