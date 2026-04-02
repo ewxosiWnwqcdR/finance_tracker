@@ -1,0 +1,45 @@
+<nav class="site-nav">
+  <div class="page-shell site-nav__inner">
+    <div class="site-nav__meta">
+      <div class="site-nav__brand">
+        <span class="site-nav__logo-icon" aria-hidden="true">
+          <span class="site-nav__logo-bar site-nav__logo-bar--short"></span>
+          <span class="site-nav__logo-bar site-nav__logo-bar--mid"></span>
+          <span class="site-nav__logo-bar site-nav__logo-bar--tall"></span>
+        </span>
+
+        <div class="site-nav__brand-copy">
+          <span class="site-nav__eyebrow">App</span>
+          <strong><%= link_to "Finanz Tracker", root_path %></strong>
+        </div>
+      </div>
+
+      <div class="site-nav__user">
+        <span class="site-nav__user-icon" aria-hidden="true"></span>
+        <span class="site-nav__user-name">Florian Kunz</span>
+      </div>
+    </div>
+
+    <div class="site-nav__menu">
+      <%= link_to "Neue Buchung", new_post_path, class: "site-nav__action" %>
+
+      <details class="site-nav__dropdown">
+        <summary class="site-nav__action site-nav__action--dropdown">Verwaltung</summary>
+        <div class="site-nav__dropdown-menu">
+          <%= link_to "Neues Konto", "#", class: "site-nav__dropdown-item" %>
+          <%= link_to "Neue Kategorie", "#", class: "site-nav__dropdown-item" %>
+          <%= link_to "Buchungsuebersicht", "#", class: "site-nav__dropdown-item" %>
+          <%= link_to "komponentenübersicht", components_path, class: "site-nav__dropdown-item" %>
+        </div>
+      </details>
+
+      <details class="site-nav__dropdown">
+        <summary class="site-nav__action site-nav__action--dropdown">Daten</summary>
+        <div class="site-nav__dropdown-menu">
+          <%= link_to "Import", "#", class: "site-nav__dropdown-item" %>
+          <%= link_to "Export", "#", class: "site-nav__dropdown-item" %>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>

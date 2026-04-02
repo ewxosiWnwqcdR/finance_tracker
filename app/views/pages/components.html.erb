@@ -1,0 +1,783 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "components", "data-turbo-track": "reload" %>
+<% end %>
+
+<section class="components-page">
+  <header class="components-hero">
+    <div class="components-hero__copy">
+      <span class="components-eyebrow">Designsystem</span>
+      <h1>Komponenten fuer den Finanz Tracker</h1>
+      <p>
+        Diese Uebersicht sammelt typische UI-Bausteine fuer Dashboard, Buchungen und spaetere
+        Verwaltungsseiten. Der Fokus liegt auf klaren Finanzkennzahlen, ruhigen Oberflaechen und
+        schnellen Aktionen.
+      </p>
+    </div>
+
+    <aside class="components-hero__panel">
+      <span class="components-panel__label">Empfohlene Richtung</span>
+      <ul class="components-checklist">
+        <li>KPI-Karten mit klarer Zahl und kurzer Entwicklung</li>
+        <li>sekundaere Links eher als Text oder Chips statt als Primarbutton</li>
+        <li>Formulare kompakt, aber nicht eng</li>
+        <li>Kategorien als farbige Tags statt Fliesstext</li>
+        <li>Top-Ausgaben visuell staerker hervorheben</li>
+      </ul>
+    </aside>
+  </header>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Links</span>
+      <h2>Navigations- und Aktionslinks</h2>
+      <p>Geeignet fuer Uebersichten, Detailwechsel und sekundaere Navigation.</p>
+    </div>
+
+    <div class="component-grid component-grid--links">
+      <a class="component-link-card" href="#">
+        <span class="component-link-card__label">Zu den Buchungen</span>
+        <strong>Alle Bewegungen ansehen</strong>
+        <small>Monat, Konto und Kategorien filtern</small>
+      </a>
+
+      <a class="component-link-card" href="#">
+        <span class="component-link-card__label">Zur Kategorieanalyse</span>
+        <strong>Top-Kategorien oeffnen</strong>
+        <small>Ausgaben nach Themenclustern auswerten</small>
+      </a>
+
+      <a class="component-link-card" href="#">
+        <span class="component-link-card__label">Zum Konto</span>
+        <strong>Girokonto Pruefung</strong>
+        <small>Saldo, letzte Buchungen und Abweichungen</small>
+      </a>
+
+      <a class="component-link-card" href="#">
+        <span class="component-link-card__label">Zum Import</span>
+        <strong>CSV-Daten pruefen</strong>
+        <small>Neue Umsaetze gegen bestehende Daten abgleichen</small>
+      </a>
+
+      <a class="component-link-card" href="#">
+        <span class="component-link-card__label">Zur Planung</span>
+        <strong>Monatsbudget vergleichen</strong>
+        <small>Budget und Ist-Werte je Kategorie betrachten</small>
+      </a>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Buttons</span>
+      <h2>Primaere und sekundaere Aktionen</h2>
+      <p>Die Beispiele decken typische Aufgaben aus Erfassung, Review und Verwaltung ab.</p>
+    </div>
+
+    <div class="button-showcase">
+      <button class="component-button component-button--primary" type="button">Neue Buchung</button>
+      <button class="component-button component-button--secondary" type="button">Monatsbericht exportieren</button>
+      <button class="component-button component-button--soft" type="button">Filter zuruecksetzen</button>
+      <button class="component-button component-button--ghost" type="button">Kategorien verwalten</button>
+      <button class="component-button component-button--danger" type="button">Buchung loeschen</button>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Formulare</span>
+      <h2>Fuenf Formularmuster fuer Buchungen und Filter</h2>
+      <p>Die Felder sind bewusst als statische Beispiele aufgebaut und nicht an ein Modell gebunden.</p>
+    </div>
+
+    <div class="component-grid component-grid--forms">
+      <form class="component-form">
+        <h3>Schnelle Ausgabe</h3>
+        <label>
+          Beschreibung
+          <input type="text" value="Supermarkt" />
+        </label>
+        <label>
+          Betrag
+          <input type="text" value="-42,80 EUR" />
+        </label>
+        <label>
+          Kategorie
+          <select>
+            <option>Lebensmittel</option>
+          </select>
+        </label>
+      </form>
+
+      <form class="component-form">
+        <h3>Einnahme erfassen</h3>
+        <label>
+          Quelle
+          <input type="text" value="Gehalt April" />
+        </label>
+        <label>
+          Betrag
+          <input type="text" value="2.950,00 EUR" />
+        </label>
+        <label>
+          Konto
+          <select>
+            <option>Girokonto</option>
+          </select>
+        </label>
+      </form>
+
+      <form class="component-form">
+        <h3>Monatsfilter</h3>
+        <label>
+          Monat
+          <input type="month" value="2026-04" />
+        </label>
+        <label>
+          Konto
+          <select>
+            <option>Alle Konten</option>
+          </select>
+        </label>
+        <label>
+          Typ
+          <select>
+            <option>Alle Buchungen</option>
+          </select>
+        </label>
+      </form>
+
+      <form class="component-form">
+        <h3>Kategorievergleich</h3>
+        <label>
+          Kategorie 1
+          <select>
+            <option>Wohnen</option>
+          </select>
+        </label>
+        <label>
+          Kategorie 2
+          <select>
+            <option>Freizeit</option>
+          </select>
+        </label>
+        <label>
+          Zeitraum
+          <input type="text" value="Jan 2026 - Apr 2026" />
+        </label>
+      </form>
+
+      <form class="component-form">
+        <h3>Import pruefen</h3>
+        <label>
+          Datei
+          <input type="text" value="umsatz_april.csv" />
+        </label>
+        <label>
+          Konto zuordnen
+          <select>
+            <option>Tagesgeld</option>
+          </select>
+        </label>
+        <label>
+          Dublettenregel
+          <select>
+            <option>Gleicher Betrag und gleiches Datum</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Karten</span>
+      <h2>Informationskarten fuer Listen, Konten und Warnungen</h2>
+      <p>Diese Karten zeigen verschiedene Gewichtungen zwischen Zahl, Kontext und Handlung.</p>
+    </div>
+
+    <div class="component-grid component-grid--cards">
+      <article class="component-card">
+        <span class="component-card__tag">Buchung</span>
+        <h3>Supermarkt am 01.04.</h3>
+        <p>Girokonto, Lebensmittel, wiederkehrendes Muster erkennbar.</p>
+        <strong>-42,80 EUR</strong>
+      </article>
+
+      <article class="component-card">
+        <span class="component-card__tag">Konto</span>
+        <h3>Girokonto Hauptkonto</h3>
+        <p>Solide Liquiditaet, letzte groessere Bewegung vor drei Tagen.</p>
+        <strong>3.842,10 EUR</strong>
+      </article>
+
+      <article class="component-card">
+        <span class="component-card__tag">Warnung</span>
+        <h3>Freizeitbudget fast erreicht</h3>
+        <p>89 Prozent des Monatsbudgets sind bereits genutzt.</p>
+        <strong>+12 Prozent ggü. Vormonat</strong>
+      </article>
+
+      <article class="component-card">
+        <span class="component-card__tag">Analyse</span>
+        <h3>Wohnen bleibt groesster Block</h3>
+        <p>Miete und Nebenkosten dominieren weiterhin die Fixkosten.</p>
+        <strong>1.180,00 EUR</strong>
+      </article>
+
+      <article class="component-card">
+        <span class="component-card__tag">Planung</span>
+        <h3>Ruecklage fuer Urlaub</h3>
+        <p>Sparziel liegt leicht vor dem Soll und entwickelt sich stabil.</p>
+        <strong>71 Prozent erreicht</strong>
+      </article>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">KPIs</span>
+      <h2>Fuenf KPI-Ideen fuer das Dashboard</h2>
+      <p>Diese Beispiele sind auf schnelle Lesbarkeit und gute Vergleichbarkeit im Finanzkontext ausgelegt.</p>
+    </div>
+
+    <div class="component-grid component-grid--kpis">
+      <article class="kpi-card kpi-card--balance">
+        <span class="kpi-card__label">Monatssaldo</span>
+        <strong>+1.248,20 EUR</strong>
+        <p>Saldo aus allen Einnahmen und Ausgaben im aktuellen Monat.</p>
+      </article>
+
+      <article class="kpi-card kpi-card--income">
+        <span class="kpi-card__label">Gesamteinnahmen</span>
+        <strong>3.420,00 EUR</strong>
+        <p>Summe aller Einnahmen, inklusive Gehalt, Rueckerstattungen und Zinsen.</p>
+      </article>
+
+      <article class="kpi-card kpi-card--expense">
+        <span class="kpi-card__label">Gesamtausgaben</span>
+        <strong>2.171,80 EUR</strong>
+        <p>Alle Ausgaben des Monats mit Fokus auf wiederkehrende Belastungen.</p>
+      </article>
+
+      <article class="kpi-card kpi-card--category">
+        <span class="kpi-card__label">Top-Kategorie</span>
+        <strong>Wohnen</strong>
+        <p>Hoechste Ausgabenkategorie im Monat mit 1.180,00 EUR Gesamtvolumen.</p>
+      </article>
+
+      <article class="kpi-card kpi-card--trend">
+        <span class="kpi-card__label">Durchschnitt pro Tag</span>
+        <strong>72,39 EUR</strong>
+        <p>Hilfreich, um Restbudget und Ausgabedynamik frueh zu erkennen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Mehr KPIs</span>
+      <h2>Weitere Kennzahlen fuer Finanzen, Budget und Verhalten</h2>
+      <p>Diese Varianten helfen, das Dashboard von einer reinen Summenansicht zu einer echten Steuerungsansicht auszubauen.</p>
+    </div>
+
+    <div class="kpi-mosaic">
+      <article class="kpi-spotlight">
+        <div class="kpi-spotlight__top">
+          <span class="kpi-card__label">Restbudget April</span>
+          <span class="kpi-badge kpi-badge--positive">+12,4 Prozent</span>
+        </div>
+
+        <strong>628,20 EUR</strong>
+        <p>Noch verfuegbar bis Monatsende. Die aktuelle Entwicklung liegt unter dem Durchschnitt der letzten drei Monate.</p>
+
+        <div class="kpi-spotlight__foot">
+          <span>Budget 1.400,00 EUR</span>
+          <span>Verbraucht 771,80 EUR</span>
+        </div>
+      </article>
+
+      <article class="kpi-split-card">
+        <div class="kpi-split-card__column">
+          <span class="kpi-card__label">Einnahmen</span>
+          <strong class="kpi-value kpi-value--positive">3.420,00 EUR</strong>
+          <p>Gehalt, Rueckerstattungen, Zinsen</p>
+        </div>
+
+        <div class="kpi-split-card__divider"></div>
+
+        <div class="kpi-split-card__column">
+          <span class="kpi-card__label">Ausgaben</span>
+          <strong class="kpi-value kpi-value--negative">2.171,80 EUR</strong>
+          <p>Fixkosten, Alltag, Freizeit</p>
+        </div>
+      </article>
+
+      <article class="kpi-progress-card">
+        <span class="kpi-card__label">Sparquote</span>
+        <div class="kpi-progress-card__value-row">
+          <strong>36,5 Prozent</strong>
+          <span class="kpi-badge">Ziel 30 Prozent</span>
+        </div>
+
+        <div class="kpi-progress">
+          <span class="kpi-progress__bar" style="width: 73%"></span>
+        </div>
+
+        <p>Berechnet aus Einnahmen minus Ausgaben. Eine ruhige Progress-Darstellung funktioniert hier besser als eine normale Zahlkarte.</p>
+      </article>
+
+      <article class="kpi-mini-chart-card">
+        <div class="kpi-mini-chart-card__head">
+          <span class="kpi-card__label">Ausgabentrend 7 Tage</span>
+          <strong>72,39 EUR / Tag</strong>
+        </div>
+
+        <div class="mini-bars" aria-hidden="true">
+          <span style="height: 32%"></span>
+          <span style="height: 54%"></span>
+          <span style="height: 46%"></span>
+          <span style="height: 78%"></span>
+          <span style="height: 38%"></span>
+          <span style="height: 92%"></span>
+          <span style="height: 58%"></span>
+        </div>
+
+        <p>Micro-Charts machen Sinn, wenn die Entwicklung wichtiger ist als nur der Endwert.</p>
+      </article>
+
+      <article class="kpi-status-card">
+        <div class="kpi-status-card__head">
+          <span class="kpi-card__label">Wiederkehrende Lasten</span>
+          <span class="kpi-dot kpi-dot--alert"></span>
+        </div>
+
+        <strong>7 offen</strong>
+        <ul class="kpi-status-list">
+          <li>Miete am 03.04.</li>
+          <li>Strom am 05.04.</li>
+          <li>Versicherung am 08.04.</li>
+        </ul>
+      </article>
+
+      <article class="kpi-ranking-card">
+        <div class="kpi-ranking-card__head">
+          <span class="kpi-card__label">Top-Kategorien nach Ausgaben</span>
+          <strong>April 2026</strong>
+        </div>
+
+        <div class="category-ranking">
+          <div class="category-ranking__item">
+            <div class="category-ranking__meta">
+              <span>Wohnen</span>
+              <strong>1.180,00 EUR</strong>
+            </div>
+            <div class="category-ranking__bar"><span style="width: 100%"></span></div>
+          </div>
+
+          <div class="category-ranking__item">
+            <div class="category-ranking__meta">
+              <span>Lebensmittel</span>
+              <strong>368,40 EUR</strong>
+            </div>
+            <div class="category-ranking__bar"><span style="width: 31%"></span></div>
+          </div>
+
+          <div class="category-ranking__item">
+            <div class="category-ranking__meta">
+              <span>Mobilitaet</span>
+              <strong>214,00 EUR</strong>
+            </div>
+            <div class="category-ranking__bar"><span style="width: 18%"></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="kpi-list-card">
+        <div class="kpi-list-card__head">
+          <span class="kpi-card__label">Kontostand nach Konto</span>
+          <strong>Liquiditaet</strong>
+        </div>
+
+        <div class="kpi-list-rows">
+          <div class="kpi-list-row">
+            <span>Girokonto</span>
+            <strong>3.842,10 EUR</strong>
+          </div>
+          <div class="kpi-list-row">
+            <span>Tagesgeld</span>
+            <strong>6.450,00 EUR</strong>
+          </div>
+          <div class="kpi-list-row">
+            <span>Urlaubstopf</span>
+            <strong>1.920,00 EUR</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="kpi-alert-card">
+        <div class="kpi-alert-card__head">
+          <span class="kpi-card__label">Budgetrisiko</span>
+          <span class="kpi-badge kpi-badge--warning">beobachten</span>
+        </div>
+
+        <strong>Freizeit +12 Prozent</strong>
+        <p>Hier wirkt ein Banner-aehnlicher KPI besser als eine klassische Statistikbox, weil Handlung naechster Schritt ist.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Kategoriesummen</span>
+      <h2>Verschiedene Designs fuer Kategorien mit Summe und Anteil</h2>
+      <p>Gerade bei Finanzen sollte die Kategorienansicht nicht nur eine flache Liste sein. Anteil, Rang und Einordnung sind meist genauso wichtig wie die Summe.</p>
+    </div>
+
+    <div class="category-summary-layout">
+      <article class="category-summary-card">
+        <div class="category-summary-card__head">
+          <span class="kpi-card__label">Ranking-Liste</span>
+          <strong>Monatliche Ausgaben</strong>
+        </div>
+
+        <div class="category-summary-list">
+          <div class="category-summary-row">
+            <span class="category-summary-row__rank">1</span>
+            <div class="category-summary-row__main">
+              <div class="category-summary-row__top">
+                <span>Wohnen</span>
+                <strong>1.180,00 EUR</strong>
+              </div>
+              <small>54,3 Prozent aller Ausgaben</small>
+            </div>
+          </div>
+
+          <div class="category-summary-row">
+            <span class="category-summary-row__rank">2</span>
+            <div class="category-summary-row__main">
+              <div class="category-summary-row__top">
+                <span>Lebensmittel</span>
+                <strong>368,40 EUR</strong>
+              </div>
+              <small>16,9 Prozent aller Ausgaben</small>
+            </div>
+          </div>
+
+          <div class="category-summary-row">
+            <span class="category-summary-row__rank">3</span>
+            <div class="category-summary-row__main">
+              <div class="category-summary-row__top">
+                <span>Mobilitaet</span>
+                <strong>214,00 EUR</strong>
+              </div>
+              <small>9,8 Prozent aller Ausgaben</small>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="category-share-card">
+        <div class="category-summary-card__head">
+          <span class="kpi-card__label">Anteile</span>
+          <strong>Verteilung im Monat</strong>
+        </div>
+
+        <div class="category-share-stack" aria-hidden="true">
+          <span class="category-share-stack__segment category-share-stack__segment--1" style="width: 54%"></span>
+          <span class="category-share-stack__segment category-share-stack__segment--2" style="width: 17%"></span>
+          <span class="category-share-stack__segment category-share-stack__segment--3" style="width: 10%"></span>
+          <span class="category-share-stack__segment category-share-stack__segment--4" style="width: 9%"></span>
+          <span class="category-share-stack__segment category-share-stack__segment--5" style="width: 10%"></span>
+        </div>
+
+        <div class="category-legend">
+          <div class="category-legend__item"><span class="category-legend__dot category-legend__dot--1"></span>Wohnen 54 Prozent</div>
+          <div class="category-legend__item"><span class="category-legend__dot category-legend__dot--2"></span>Lebensmittel 17 Prozent</div>
+          <div class="category-legend__item"><span class="category-legend__dot category-legend__dot--3"></span>Mobilitaet 10 Prozent</div>
+          <div class="category-legend__item"><span class="category-legend__dot category-legend__dot--4"></span>Freizeit 9 Prozent</div>
+          <div class="category-legend__item"><span class="category-legend__dot category-legend__dot--5"></span>Sonstiges 10 Prozent</div>
+        </div>
+      </article>
+
+      <article class="category-tile-card">
+        <div class="category-summary-card__head">
+          <span class="kpi-card__label">Tiles</span>
+          <strong>Verdichtete Summen</strong>
+        </div>
+
+        <div class="category-tiles">
+          <div class="category-tile">
+            <span>Wohnen</span>
+            <strong>1.180,00 EUR</strong>
+          </div>
+          <div class="category-tile">
+            <span>Lebensmittel</span>
+            <strong>368,40 EUR</strong>
+          </div>
+          <div class="category-tile">
+            <span>Mobilitaet</span>
+            <strong>214,00 EUR</strong>
+          </div>
+          <div class="category-tile">
+            <span>Freizeit</span>
+            <strong>196,30 EUR</strong>
+          </div>
+          <div class="category-tile">
+            <span>Gesundheit</span>
+            <strong>92,10 EUR</strong>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Banner</span>
+      <h2>Hinweis-, Warn- und Fehlerbanner in mehreren Designs</h2>
+      <p>Die Banner unterscheiden sich bewusst in Gewichtung, damit nicht jede Meldung gleich laut wirkt.</p>
+    </div>
+
+    <div class="banner-stack">
+      <article class="message-banner message-banner--info">
+        <div class="message-banner__icon">i</div>
+        <div class="message-banner__body">
+          <strong>Hinweis: Buchungen vom April werden noch importiert.</strong>
+          <p>Die Liste ist noch nicht vollstaendig. Ein Refresh in wenigen Sekunden sollte die neuen Datensaetze anzeigen.</p>
+        </div>
+      </article>
+
+      <article class="message-banner message-banner--success">
+        <div class="message-banner__icon">+</div>
+        <div class="message-banner__body">
+          <strong>Import erfolgreich abgeschlossen.</strong>
+          <p>128 neue Buchungen wurden gespeichert. Drei Dubletten wurden uebersprungen.</p>
+        </div>
+      </article>
+
+      <article class="message-banner message-banner--warning">
+        <div class="message-banner__icon">!</div>
+        <div class="message-banner__body">
+          <strong>Warnung: Freizeitbudget fast ausgeschopft.</strong>
+          <p>Nur noch 38,00 EUR verfuegbar. Die letzten Restaurantbuchungen treiben die Kategorie deutlich ueber den Durchschnitt.</p>
+        </div>
+      </article>
+
+      <article class="message-banner message-banner--error">
+        <div class="message-banner__icon">x</div>
+        <div class="message-banner__body">
+          <strong>Fehler: Buchung konnte nicht gespeichert werden.</strong>
+          <p>Das Buchungsdatum liegt in der Zukunft und der Betrag fehlt. Bitte pruefe die markierten Felder im Formular.</p>
+        </div>
+      </article>
+
+      <article class="message-banner message-banner--inline">
+        <div class="message-banner__body">
+          <strong>Hinweis mit Aktion</strong>
+          <p>Die Kategorie "Mobilitaet" hat noch keine Budgetgrenze. <a href="#">Budget jetzt anlegen</a></p>
+        </div>
+      </article>
+
+      <article class="message-banner message-banner--outlined">
+        <div class="message-banner__body">
+          <strong>Kritischer Importfehler</strong>
+          <p>Die CSV-Datei enthaelt keine lesbare Datumsspalte. Passe zuerst das Mapping an, bevor du den Import erneut startest.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Tabellen</span>
+      <h2>Tabellenmuster fuer Buchungen, Kategorien und Konten</h2>
+      <p>Die Beispiele zeigen verschiedene Schwerpunkte: detailreich, verdichtet und vergleichend.</p>
+    </div>
+
+    <div class="table-showcase">
+      <div class="table-card">
+        <div class="table-card__header">
+          <h3>Letzte Buchungen</h3>
+          <span>Detailorientiert</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="component-table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Beschreibung</th>
+                <th>Konto</th>
+                <th>Kategorie</th>
+                <th>Betrag</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>02.04.2026</td>
+                <td>Baeckerei Morgenstern</td>
+                <td>Girokonto</td>
+                <td><span class="table-pill">Lebensmittel</span></td>
+                <td class="table-value table-value--negative">-6,40 EUR</td>
+              </tr>
+              <tr>
+                <td>01.04.2026</td>
+                <td>Gehalt April</td>
+                <td>Girokonto</td>
+                <td><span class="table-pill">Einnahmen</span></td>
+                <td class="table-value table-value--positive">+2.950,00 EUR</td>
+              </tr>
+              <tr>
+                <td>01.04.2026</td>
+                <td>Deutschlandticket</td>
+                <td>Kreditkarte</td>
+                <td><span class="table-pill">Mobilitaet</span></td>
+                <td class="table-value table-value--negative">-49,00 EUR</td>
+              </tr>
+              <tr>
+                <td>31.03.2026</td>
+                <td>Streaming Abo</td>
+                <td>Girokonto</td>
+                <td><span class="table-pill">Freizeit</span></td>
+                <td class="table-value table-value--negative">-12,99 EUR</td>
+              </tr>
+              <tr>
+                <td>30.03.2026</td>
+                <td>Rueckzahlung Versicherung</td>
+                <td>Tagesgeld</td>
+                <td><span class="table-pill">Rueckerstattung</span></td>
+                <td class="table-value table-value--positive">+148,00 EUR</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-card__header">
+          <h3>Top-Ausgabenkategorien</h3>
+          <span>Verdichtet</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="component-table component-table--compact">
+            <thead>
+              <tr>
+                <th>Kategorie</th>
+                <th>Buchungen</th>
+                <th>Volumen</th>
+                <th>Anteil</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wohnen</td>
+                <td>4</td>
+                <td>1.180,00 EUR</td>
+                <td>54,3 Prozent</td>
+              </tr>
+              <tr>
+                <td>Lebensmittel</td>
+                <td>16</td>
+                <td>368,40 EUR</td>
+                <td>16,9 Prozent</td>
+              </tr>
+              <tr>
+                <td>Mobilitaet</td>
+                <td>7</td>
+                <td>214,00 EUR</td>
+                <td>9,8 Prozent</td>
+              </tr>
+              <tr>
+                <td>Freizeit</td>
+                <td>9</td>
+                <td>196,30 EUR</td>
+                <td>9,0 Prozent</td>
+              </tr>
+              <tr>
+                <td>Gesundheit</td>
+                <td>3</td>
+                <td>92,10 EUR</td>
+                <td>4,2 Prozent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-card__header">
+          <h3>Kontenuebersicht</h3>
+          <span>Mit Status</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="component-table">
+            <thead>
+              <tr>
+                <th>Konto</th>
+                <th>Typ</th>
+                <th>Saldo</th>
+                <th>Letzte Bewegung</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Girokonto</td>
+                <td>Alltag</td>
+                <td>3.842,10 EUR</td>
+                <td>Heute</td>
+                <td><span class="table-status table-status--good">stabil</span></td>
+              </tr>
+              <tr>
+                <td>Kreditkarte</td>
+                <td>Zahlungen</td>
+                <td>-318,20 EUR</td>
+                <td>Gestern</td>
+                <td><span class="table-status table-status--alert">beobachten</span></td>
+              </tr>
+              <tr>
+                <td>Tagesgeld</td>
+                <td>Reserve</td>
+                <td>6.450,00 EUR</td>
+                <td>30.03.2026</td>
+                <td><span class="table-status table-status--good">ruhig</span></td>
+              </tr>
+              <tr>
+                <td>Urlaubstopf</td>
+                <td>Ruecklage</td>
+                <td>1.920,00 EUR</td>
+                <td>28.03.2026</td>
+                <td><span class="table-status table-status--neutral">planmaessig</span></td>
+              </tr>
+              <tr>
+                <td>Bargeld</td>
+                <td>Barreserve</td>
+                <td>85,00 EUR</td>
+                <td>27.03.2026</td>
+                <td><span class="table-status table-status--low">niedrig</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="component-section__heading">
+      <span class="component-section__eyebrow">Kategorien</span>
+      <h2>Beispielkategorien fuer den Finanz Tracker</h2>
+      <p>Jede Kategorie ist als Tag gedacht und kann spaeter in Tabellen, Formularen oder Karten wiederverwendet werden.</p>
+    </div>
+
+    <div class="category-cloud">
+      <span class="category-pill">Wohnen</span>
+      <span class="category-pill">Lebensmittel</span>
+      <span class="category-pill">Mobilitaet</span>
+      <span class="category-pill">Gesundheit</span>
+      <span class="category-pill">Freizeit</span>
+    </div>
+  </section>
+</section>
