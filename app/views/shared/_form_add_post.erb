@@ -7,5 +7,6 @@
         <%= form.label :posting_date %><%= form.date_field :posting_date, value: (form.object.posting_date || Date.current) %>
          
         <%= form.submit %>
+        <%= link_to "Abbrechen", root_path %>
     <% end %>
 </section>

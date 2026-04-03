@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_02_165628) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_03_142419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
   create_enum "entry_type", ["income", "expense", "transfer"]
+  create_enum "transaction_type", ["manual", "imported", "api"]
 
   create_table "accounts", force: :cascade do |t|
     t.string "bank_name", null: false
@@ -51,6 +52,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_02_165628) do
     t.text "payment_reference"
     t.date "posting_date", null: false
     t.string "transaction_ref", null: false
+    t.enum "transaction_type", null: false, enum_type: "transaction_type"
     t.bigint "user_id", null: false
     t.index ["account_id", "transaction_ref"], name: "index_transactions_on_account_id_and_transaction_ref", unique: true
     t.index ["account_id"], name: "index_transactions_on_account_id"
