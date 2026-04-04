@@ -36,7 +36,7 @@
       <details class="site-nav__dropdown">
         <summary class="site-nav__action site-nav__action--dropdown">Daten</summary>
         <div class="site-nav__dropdown-menu">
-          <%= link_to "Import", "#", class: "site-nav__dropdown-item" %>
+          <%= render "shared/form_import_export" %>
           <%= link_to "Export", "#", class: "site-nav__dropdown-item" %>
         </div>
       </details>

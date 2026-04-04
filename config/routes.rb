@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   # get "datenschutz", to: "pages#hilfe"
 
   # resources
-  resources :transactions, only: [ :show, :new, :create ]
+  resources :transactions, only: [ :new, :create ]
   # resources :articles, only: [ :show, :index, :new, :create, :edit, :update, :destroy ]
+
+  post "import_transactions/analyze", to: "import_transactions#analyze", as: :analyze_import_transactions
 end

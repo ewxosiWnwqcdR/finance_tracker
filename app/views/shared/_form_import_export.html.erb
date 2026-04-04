@@ -1,0 +1,23 @@
+<section data-controller="import-trigger">
+    <%= form_with url: analyze_import_transactions_path, method: :post, multipart: true, local: true,
+        data: { import_trigger_target: "form" } do |form| %>
+        <%= form.file_field :file,
+            id: "import-file-input",
+            style: "display: none;",
+            data: {
+              import_trigger_target: "input",
+              action: "change->import-trigger#submit"
+            } %>
+        <%= button_tag type: "button",
+            class: "site-nav__dropdown-item site-nav__dropdown-item--loading",
+            data: {
+              import_trigger_target: "button",
+              action: "click->import-trigger#open"
+            } do %>
+            <span data-import-trigger-target="label">Import</span>
+        <% end %>
+    <% end %>
+</section>
+
+
+
